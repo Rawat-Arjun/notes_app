@@ -37,10 +37,14 @@ class _NotesAppState extends State<NotesApp> {
         title: const Text('Notes App'),
         centerTitle: true,
       ),
-      body: Container(
-        child: const Center(
-          child: Text('Hello World'),
-        ),
+      body: const Row(
+        children: [
+          Center(
+            child: Text(
+              'Hello World',
+            ),
+          ),
+        ],
       ),
     );
   }
