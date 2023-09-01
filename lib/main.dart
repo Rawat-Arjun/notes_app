@@ -18,19 +18,19 @@ class LoginApp extends StatelessWidget {
       title: 'Login',
       theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData.dark(),
-      home: const login_page(),
+      home: const register_page(),
     );
   }
 }
 
-class login_page extends StatefulWidget {
-  const login_page({super.key});
+class register_page extends StatefulWidget {
+  const register_page({super.key});
 
   @override
-  State<login_page> createState() => _login_pageState();
+  State<register_page> createState() => _register_pageState();
 }
 
-class _login_pageState extends State<login_page> {
+class _register_pageState extends State<register_page> {
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
 
@@ -57,7 +57,7 @@ class _login_pageState extends State<login_page> {
                 const CircleAvatar(
                   radius: 120,
                   backgroundImage: AssetImage(
-                    'lib/assets/image/login.jpg',
+                    'lib/assets/image/register.jpg',
                   ),
                 ),
                 const SizedBox(
@@ -74,7 +74,21 @@ class _login_pageState extends State<login_page> {
                       text: const TextSpan(
                         children: [
                           TextSpan(
-                            text: 'Welcome Back :)',
+                            text: 'Welcome to ',
+                            style: TextStyle(
+                              color: Colors.white70,
+                              fontSize: 25,
+                            ),
+                          ),
+                          TextSpan(
+                            text: 'Notes App',
+                            style: TextStyle(
+                              color: Colors.yellowAccent,
+                              fontSize: 25,
+                            ),
+                          ),
+                          TextSpan(
+                            text: ' :)',
                             style: TextStyle(
                               color: Colors.white70,
                               fontSize: 25,
@@ -117,7 +131,6 @@ class _login_pageState extends State<login_page> {
                         controller: password,
                         enableSuggestions: false,
                         obscureText: true,
-                        autofillHints: const [AutofillHints.password],
                         decoration: InputDecoration(
                           hintText: 'Password',
                           prefixIcon: const Icon(
@@ -159,7 +172,7 @@ class _login_pageState extends State<login_page> {
                       ],
                     ),
                     child: const Text(
-                      'Login',
+                      'Register',
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 18,
@@ -169,7 +182,7 @@ class _login_pageState extends State<login_page> {
                   onPressed: () {},
                 ),
                 const Divider(
-                  height: 30,
+                  height: 20,
                   color: Colors.white30,
                   thickness: 1,
                   indent: 10,
@@ -188,7 +201,7 @@ class _login_pageState extends State<login_page> {
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: const Text(
-                      'Already an Account',
+                      "Already an Account",
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 18,
